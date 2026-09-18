@@ -1,75 +1,60 @@
 # Pritam Prakash Mishra — Portfolio
 
-A premium, production-ready personal portfolio built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.
+My personal portfolio showcasing my projects, skills, and development journey.
 
-## Stack
+## About Me
 
-- **Next.js 15** (App Router) + **TypeScript**
-- **Tailwind CSS v4** with a custom design-token system (CSS variables, dark/light theme)
-- **Framer Motion** for scroll reveals, hero entrance, magnetic buttons, animated counters
-- **lucide-react** for icons
-- **next-themes** for dark/light mode with persistence
-- Hand-built UI primitives in shadcn/ui style (Button, Card, Input, Textarea, Badge) — no external registry dependency
+I'm a MERN stack developer with a strong interest in frontend development, currently exploring AI and Machine Learning.
 
-## Before you deploy — replace these placeholders
+- **Education:** B.Tech in Computer Science & Engineering
+- **College:** Parala Maharaja Engineering College, Berhampur
+- **Expected Graduation:** 2027
+- **Location:** Chhatrapur, Ganjam, Odisha
+- **GitHub:** [genos069](https://github.com/genos069)
 
-| What | Where | File |
-|---|---|---|
-| GitHub URL | `links.github` | `src/lib/data.ts` |
-| LinkedIn URL | `links.linkedin` | `src/lib/data.ts` |
-| Project repo/demo links | `projects[].repo`, `projects[].demo` | `src/lib/data.ts` |
-| Resume PDF | replace the placeholder file | `public/resume.pdf` |
-| Project screenshots | swap the dashed placeholder slots | `src/components/sections/projects.tsx` (`ProjectImagePlaceholder`) |
-| Site URL (for SEO/OG) | `siteConfig.url` | `src/lib/data.ts` |
-| OG image | replace placeholder | `public/og-image.png` |
-| Favicon | replace placeholder | `public/favicon.ico` |
+## Skills
 
-The GitHub showcase section (`src/components/sections/github-showcase.tsx`) calls the public GitHub REST API client-side using the username parsed from `links.github` — once that's a real username, the contribution graph and repo cards populate automatically. No API key needed for public data.
+- **Frontend:** React, Next.js, TypeScript, JavaScript, Tailwind CSS
+- **Backend:** Node.js, Express.js, Spring Boot
+- **Database:** MongoDB
+- **Languages:** Java, JavaScript, TypeScript
+- **Tools:** Git, GitHub, VS Code
 
-The contact form currently opens the visitor's email client via a `mailto:` link as a zero-backend fallback. For a real inbox, wire `handleSubmit` in `src/components/sections/contact.tsx` to a form backend (Resend, Formspree, a Next.js Route Handler, etc).
+## Projects
 
-## Getting started
+- **CodeGear:** A real-time collaborative coding interview platform.
+- **ClickNCart:** An e-commerce application with authentication, cart management, and payment integration.
+- **ModChess:** A multiplayer chess application with real-time gameplay and chat.
+- **SortyUrl:** A URL shortener built with Express and MongoDB.
+
+## Portfolio Tech Stack
+
+Next.js 15 · TypeScript · Tailwind CSS v4 · Framer Motion · Lucide React · next-themes
+
+## Features
+
+- Responsive design with dark and light themes
+- Project showcase with images, videos, and links
+- GitHub repository showcase
+- Resume download and email contact
+- Smooth animations
+
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [localhost:3000](http://localhost:3000).
 
-## Build
+## Production Build
 
 ```bash
 npm run build
 npm run start
 ```
 
-> **Note:** the build fetches the Geist font family from Google Fonts at build time via `next/font/google`. This requires outbound network access to `fonts.googleapis.com` / `fonts.gstatic.com` — this works automatically on Vercel and most CI environments. If you're building somewhere without that access, swap `next/font/google` for `next/font/local` in `src/app/layout.tsx` with a self-hosted font file.
+## Customize
 
-## Deploy
-
-Push to a GitHub repo and import it on [vercel.com/new](https://vercel.com/new) — zero config needed. Or run:
-
-```bash
-npx vercel
-```
-
-## Project structure
-
-```
-src/
-  app/
-    layout.tsx        — metadata, JSON-LD, fonts, theme provider
-    page.tsx           — assembles all sections
-    globals.css        — design tokens (color, spacing, motion)
-    sitemap.ts, robots.ts
-  components/
-    layout/             — nav, footer, scroll progress, back-to-top, loading screen
-    sections/           — hero, about, skills, projects, achievements, github, contact
-    ui/                 — button, card, input, textarea, badge, reveal, magnetic
-  lib/
-    data.ts             — all site content (single source of truth)
-    utils.ts            — cn() class helper
-```
-
-Update content (name, skills, projects, stats, achievements) by editing `src/lib/data.ts` — nothing else needs to change.
+Update portfolio content in `src/lib/data.ts`. Store images, videos, and your resume in `public/`.

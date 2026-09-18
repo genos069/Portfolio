@@ -12,12 +12,12 @@ const commands: Record<string, string[]> = {
     `Based in ${siteConfig.location}`,
   ],
   "cat stack.json": [
-    "{",
     `  "frontend": [${skillGroups[0].skills.slice(0, 4).map((s) => `"${s}"`).join(", ")}],`,
     `  "backend": [${skillGroups[1].skills.map((s) => `"${s}"`).join(", ")}],`,
     `  "database": ["MongoDB"],`,
     `  "auth": ["JWT", "bcrypt"]`,
-    "}",
+    `  "tools": [${skillGroups[4].skills.map((s) => `"${s}"`).join(", ")}],`,
+    `  "languages": [${skillGroups[5].skills.map((s) => `"${s}"`).join(", ")}]`,
   ],
   "git log --oneline -3": [
     "feat: integrate Razorpay checkout flow",
@@ -98,7 +98,7 @@ export function Terminal() {
         <span className="size-3 rounded-full bg-[#ff5f57]" />
         <span className="size-3 rounded-full bg-[#febc2e]" />
         <span className="size-3 rounded-full bg-[#28c840]" />
-        <span className="ml-3 font-mono-tight text-xs text-muted">bharat@portfolio — zsh</span>
+        <span className="ml-3 font-mono-tight text-xs text-muted">Pritam@portfolio — zsh</span>
       </div>
 
       {/* Body */}

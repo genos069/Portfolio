@@ -67,7 +67,7 @@ const jsonLd = {
   email: siteConfig.email,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Berhampur",
+    addressLocality: "Bhubaneswar",
     addressRegion: "Odisha",
     addressCountry: "IN",
   },

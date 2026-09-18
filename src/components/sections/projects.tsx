@@ -103,7 +103,7 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
         </div>
 
         <div className="mb-6">
-            <ProjectImagePlaceholder name={project.name} media={project.media} />
+          <ProjectImagePlaceholder name={project.name} media={project.media} />
         </div>
 
         <p className="text-sm text-muted leading-relaxed mb-6">{project.description}</p>
@@ -117,11 +117,25 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
           ))}
         </div>
 
-        <div className="mt-auto flex flex-wrap gap-2 pt-5 border-t border-border">
+        <div
+          onMouseMove={(e) => {
+            const container = e.currentTarget;
+            const { left, width } = container.getBoundingClientRect();
+
+            const position = Math.max(
+              0,
+              Math.min(1, (e.clientX - left) / width)
+            );
+
+            container.scrollLeft =
+              position * (container.scrollWidth - container.clientWidth);
+          }}
+          className="mt-auto flex w-full min-w-0 flex-nowrap gap-2 overflow-x-auto border-t border-border pt-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {project.stack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full bg-surface-raised border border-border px-3 py-1 font-mono-tight text-[11px] text-muted"
+              className="shrink-0 whitespace-nowrap rounded-full bg-surface-raised border border-border px-3 py-1 font-mono-tight text-[11px] text-muted"
             >
               {tech}
             </span>

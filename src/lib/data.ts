@@ -15,7 +15,7 @@ export const siteConfig = {
   url: "https://pritamprakashmishra.dev",
   email: "genoscyber2@gmail.com",
   phone: "+91 7205029714",
-  location: "Berhampur, Odisha, India",
+  location: "Bhubaneswar, Odisha, India",
   resumeUrl: "/resume.pdf",
   links: {
     github: "https://github.com/genos069",

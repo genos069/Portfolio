@@ -10,8 +10,10 @@ import { Projects } from "@/components/sections/projects";
 import { Achievements } from "@/components/sections/achievements";
 import { GithubShowcase } from "@/components/sections/github-showcase";
 import { Contact } from "@/components/sections/contact";
+import { getStarredProjects } from "@/lib/github-projects";
 
-export default function Home() {
+export default async function Home() {
+  const { projects, error } = await getStarredProjects();
   return (
     <>
       <LoadingScreen />
@@ -21,7 +23,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
-        <Projects />
+        <Projects projects={projects} error={error} />
         <Achievements />
         <GithubShowcase />
         <Contact />

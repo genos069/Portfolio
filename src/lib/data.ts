@@ -83,61 +83,14 @@ export type Project = {
   name: string;
   tagline: string;
   description: string;
-  features: string[];
   stack: string[];
   repo: string;
-  demo: string;
-  size: "large" | "medium";
+  demo?: string;
   accentLabel: string;
+  stars: number;
+  forks: number;
   media?: string;
 };
-
-export const projects: Project[] = [
-  {
-    slug: "smart-waste-collection",
-    name: "Smart Waste Collection System",
-    tagline: "Geolocation-enabled routing & monitoring platform",
-    description:
-      "A geolocation-enabled waste collection platform that optimizes routing and simulates real-time waste monitoring across an entire municipal fleet.",
-    features: [
-      "Geolocation validation",
-      "JWT authentication",
-      "Role-based authorization",
-      "IoT waste-level simulation",
-      "Admin dashboard",
-      "Driver dashboard",
-      "Secure password reset",
-    ],
-    stack: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "GeoJSON", "Tailwind CSS"],
-    repo: "https://github.com/genos069/Smart-Waste-Collection-System",
-    demo: "https://smart-waste-demo.vercel.app",
-    size: "medium",
-    accentLabel: "Civic infrastructure",
-  },
-  {
-    slug: "clickncart",
-    name: "ClickNCart",
-    tagline: "Full-stack e-commerce with real payments",
-    description:
-      "A scalable full-stack e-commerce platform with secure authentication, live payment processing, and a complete admin management surface.",
-    features: [
-      "JWT authentication",
-      "Redux Toolkit state management",
-      "Product management",
-      "Shopping cart",
-      "Stripe integration",
-      "Razorpay integration",
-      "Admin dashboard",
-    ],
-    stack: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux Toolkit", "JWT", "Stripe", "Razorpay"],
-    repo: "https://github.com/genos069/ClickNCart-",
-    demo: "https://clickncart-demo.vercel.app",
-    size: "medium",
-    media: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-    accentLabel: "E-commerce",
-  },
-  
-];
 
 export type Stat = {
   label: string;

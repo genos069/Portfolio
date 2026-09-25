@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, ImageIcon, CheckCircle2 } from "lucide-react";
-import { projects, type Project } from "@/lib/data";
+import { ArrowUpRight, Github, ImageIcon, Star, GitFork } from "lucide-react";
+import type { Project } from "@/lib/data";
+import Image from "next/image";
 import { SectionLabel } from "@/components/ui/section-label";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
@@ -18,9 +19,7 @@ function ProjectImagePlaceholder({
 }) {
   const [hasError, setHasError] = useState(false);
 
-  const isVideo = media
-    ? /\.(mp4|webm|ogg|mov)$/i.test(media)
-    : false;
+  const isVideo = media ? /\.(mp4|webm|ogg)$/i.test(media) : false;
 
   return (
     <div className="relative w-full aspect-[16/10] rounded-[20px] border-2 border-blue-500 bg-surface-raised overflow-hidden">
@@ -50,10 +49,12 @@ function ProjectImagePlaceholder({
           onError={() => setHasError(true)}
         />
       ) : (
-        <img
+        <Image
           src={media}
           alt={name}
-          className="absolute inset-0 w-full h-full max-w-full object-cover"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover"
           onError={() => setHasError(true)}
         />
       )}
@@ -63,13 +64,12 @@ function ProjectImagePlaceholder({
 
 
 
-function ProjectCard({ project, featured }: { project: Project; featured: boolean }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={`group relative rounded-[var(--radius-lg)] border border-border bg-surface overflow-hidden hover:border-border-strong hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.35)] transition-shadow duration-400 ${featured ? "lg:col-span-7" : "lg:col-span-5"
-        }`}
+      className="group relative h-full rounded-[var(--radius-lg)] border border-border bg-surface overflow-hidden hover:border-border-strong hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.35)] transition-shadow duration-400"
     >
       <div className="p-7 lg:p-8 flex flex-col h-full">
         <div className="flex items-start justify-between gap-4 mb-5">
@@ -90,15 +90,17 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
             >
               <Github className="size-4" />
             </a>
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${project.name} live demo`}
-              className="flex items-center justify-center size-9 rounded-full bg-accent text-white hover:brightness-110 transition-all"
-            >
-              <ArrowUpRight className="size-4" />
-            </a>
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.name} live demo`}
+                className="flex items-center justify-center size-9 rounded-full bg-accent text-white hover:brightness-110 transition-all"
+              >
+                <ArrowUpRight className="size-4" />
+              </a>
+            )}
           </div>
         </div>
 
@@ -108,13 +110,9 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
 
         <p className="text-sm text-muted leading-relaxed mb-6">{project.description}</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-          {project.features.map((feature) => (
-            <div key={feature} className="flex items-start gap-2 text-sm text-muted">
-              <CheckCircle2 className="size-4 text-accent-soft mt-0.5 shrink-0" strokeWidth={2} />
-              <span>{feature}</span>
-            </div>
-          ))}
+        <div className="flex items-center gap-5 text-xs text-muted-2 mb-6">
+          <span className="flex items-center gap-1.5"><Star className="size-4" /> {project.stars}</span>
+          <span className="flex items-center gap-1.5"><GitFork className="size-4" /> {project.forks}</span>
         </div>
 
         <div
@@ -146,7 +144,7 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
   );
 }
 
-export function Projects() {
+export function Projects({ projects, error }: { projects: Project[]; error: boolean }) {
   return (
     <section id="projects" className="relative py-28 lg:py-36 border-t border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -154,11 +152,10 @@ export function Projects() {
 
         <Reveal className="mt-8 max-w-xl">
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.15]">
-            Built like products, not assignments.
+            Repositories I&apos;ve starred.
           </h2>
           <p className="mt-4 text-muted leading-relaxed">
-            Two end-to-end builds — each taken from data model to deployment, with real
-            auth, real payment flows, and the edge cases that come with both.
+            Projects from my GitHub stars, refreshed automatically. Each card links to its original repository.
           </p>
         </Reveal>
 
@@ -166,18 +163,21 @@ export function Projects() {
           {projects.map((project, i) => (
             <Reveal
               key={project.slug}
-              delay={i * 0.1}
+              delay={Math.min(i, 8) * 0.08}
               className="w-full lg:w-[calc(50%-12px)]"
             >
-              <ProjectCard project={project} featured={project.size === "large"} />
+              <ProjectCard project={project} />
             </Reveal>
           ))}
         </div>
 
+        {error && <p className="mt-10 text-sm text-muted">GitHub projects are unavailable right now. Visit my starred repositories below.</p>}
+        {!error && projects.length === 0 && <p className="mt-10 text-sm text-muted">No public starred repositories yet.</p>}
+
         <Reveal delay={0.2} className="mt-8 flex justify-center">
-          <a href="https://github.com/genos069?tab=repositories" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/genos069?tab=stars" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="lg">
-              View all repositories <ArrowUpRight className="size-4" />
+              View starred repositories <ArrowUpRight className="size-4" />
             </Button>
           </a>
         </Reveal>

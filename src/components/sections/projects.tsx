@@ -53,7 +53,7 @@ function ProjectImagePlaceholder({
         <img
           src={media}
           alt={name}
-          className="absolute inset-0 w-full h-full max-w-full object-cover"
+          className="absolute inset-0 w-full h-full max-w-full"
           onError={() => setHasError(true)}
         />
       )}

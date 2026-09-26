@@ -53,7 +53,7 @@ function ProjectImagePlaceholder({
         <img
           src={media}
           alt={name}
-          className="absolute inset-0 w-full h-full max-w-full object-cover"
+          className="absolute inset-0 w-full h-full max-w-full"
           onError={() => setHasError(true)}
         />
       )}
@@ -102,7 +102,7 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
           </div>
         </div>
 
-        <div className="mb-6">
+        <div className="mb-6 p">
           <ProjectImagePlaceholder name={project.name} media={project.media} />
         </div>
 

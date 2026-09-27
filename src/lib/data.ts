@@ -12,7 +12,7 @@ export const siteConfig = {
     "Building scalable full-stack applications with modern web technologies.",
   longDescription:
     "Computer Science undergraduate and full-stack developer specializing in React, Node.js, Express.js, and MongoDB.",
-  url: "https://pritamprakashmishra.dev",
+  url: "https://pritamprakashmishra.vercel.app",
   email: "genoscyber2@gmail.com",
   phone: "+91 7205029714",
   location: "Bhubaneswar, Odisha, India",

@@ -13,14 +13,14 @@ export const siteConfig = {
   longDescription:
     "Computer Science undergraduate and full-stack developer specializing in React, Node.js, Express.js, and MongoDB.",
   url: "https://pritamprakashmishra.vercel.app",
-  email: "genoscyber2@gmail.com",
+  email: "pritamprakash690@gmail.com",
   phone: "+91 7205029714",
   location: "Bhubaneswar, Odisha, India",
   resumeUrl: "/resume.pdf",
   links: {
     github: "https://github.com/genos069",
     linkedin: "https://www.linkedin.com/in/pritam-prakash-mishra-450127353/",
-    email: "mailto:genoscyber2@gmail.com",
+    email: "mailto:pritamprakash690@gmail.com",
   },
 };
 
@@ -69,12 +69,12 @@ export const skillGroups: SkillGroup[] = [
   {
     category: "Tools",
     description: "The daily workflow, end to end.",
-    skills: ["Git", "GitHub", "VS Code", "Postman","Figma"],
+    skills: ["Git", "GitHub", "VS Code", "Postman", "Figma"],
   },
   {
     category: "Languages",
     description: "Programming languages I use to build software.",
-    skills: ["JavaScript", "TypeScript", "Java", "C" , "Python"],
+    skills: ["JavaScript", "TypeScript", "Java", "C", "Python"],
   },
 ];
 
@@ -94,73 +94,73 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-  slug: "smart-waste-collection",
-  name: "Smart Waste Collection System",
-  tagline: "Location-aware waste pickup and routing",
-  description:
-    "A waste collection platform that simulates bin fill levels, identifies bins ready for pickup, and guides drivers to nearby bins using live location and map routes.",
-  features: [
-    "Simulated bin fill-level monitoring",
-    "Pickup tasks for bins at 70% capacity",
-    "Nearest-bin selection and driving routes",
-    "Live driver location tracking",
-    "Interactive bin and route maps",
-    "Admin and driver dashboards",
-    "JWT authentication and role-based access",
-  ],
-  stack: [
-    "MongoDB",
-    "Express.js",
-    "React",
-    "Node.js",
-    "Tailwind CSS",
-    "React Leaflet",
-    "OpenStreetMap",
-    "OSRM",
-    "GeoJSON",
-    "JWT",
-  ],
-  repo: "https://github.com/genos069/Smart-Waste-Collection-System",
-  demo: "",
-  size: "medium",
-  media: "https://raw.githubusercontent.com/genos069/Smart-Waste-Collection-System/main/client/public/demo.png",
-  accentLabel: "Civic Infrastructure",
-},
+    slug: "smart-waste-collection",
+    name: "Smart Waste Collection System",
+    tagline: "Location-aware waste pickup and routing",
+    description:
+      "A waste collection platform that simulates bin fill levels, identifies bins ready for pickup, and guides drivers to nearby bins using live location and map routes.",
+    features: [
+      "Simulated bin fill-level monitoring",
+      "Pickup tasks for bins at 70% capacity",
+      "Nearest-bin selection and driving routes",
+      "Live driver location tracking",
+      "Interactive bin and route maps",
+      "Admin and driver dashboards",
+      "JWT authentication and role-based access",
+    ],
+    stack: [
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "React Leaflet",
+      "OpenStreetMap",
+      "OSRM",
+      "GeoJSON",
+      "JWT",
+    ],
+    repo: "https://github.com/genos069/Smart-Waste-Collection-System",
+    demo: "https://smart-waste-collection-systems.vercel.app",
+    size: "medium",
+    media: "https://raw.githubusercontent.com/genos069/Smart-Waste-Collection-System/main/client/public/demo.png",
+    accentLabel: "Civic Infrastructure",
+  },
   {
-  slug: "codegear",
-  name: "CodeGear",
-  tagline: "Real-time collaborative coding interviews",
-  description:
-    "A technical interview platform where candidates and interviewers collaborate in live coding rooms, while candidates can practice problems and receive AI-generated mock interview feedback.",
-  features: [
-    "Live collaborative code editor",
-    "Video interviews and screen sharing",
-    "Interview chat and shared whiteboard",
-    "Multi-language code execution",
-    "AI mock interviews and feedback",
-    "Candidate and interviewer dashboards",
-    "JWT-based authentication",
-  ],
-  stack: [
-    "React",
-    "TypeScript",
-    "Vite",
-    "Tailwind CSS",
-    "Monaco Editor",
-    "Spring Boot",
-    "MongoDB",
-    "WebSocket",
-    "WebRTC",
-    "Google Gemini",
-    "JWT",
-  ],
-  repo: "https://github.com/genos069/Real-Time-Interview-Collaborative-Coding-Platform",
-  demo: "",
-  size: "medium",
-  media: "https://raw.githubusercontent.com/genos069/Real-Time-Interview-Collaborative-Coding-Platform/main/Client/public/demo.png",
-  accentLabel: "Interview Platform",
-},
-  
+    slug: "codegear",
+    name: "CodeGear",
+    tagline: "Real-time collaborative coding interviews",
+    description:
+      "A technical interview platform where candidates and interviewers collaborate in live coding rooms, while candidates can practice problems and receive AI-generated mock interview feedback.",
+    features: [
+      "Live collaborative code editor",
+      "Video interviews and screen sharing",
+      "Interview chat and shared whiteboard",
+      "Multi-language code execution",
+      "AI mock interviews and feedback",
+      "Candidate and interviewer dashboards",
+      "JWT-based authentication",
+    ],
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Monaco Editor",
+      "Spring Boot",
+      "MongoDB",
+      "WebSocket",
+      "WebRTC",
+      "Google Gemini",
+      "JWT",
+    ],
+    repo: "https://github.com/genos069/Real-Time-Interview-Collaborative-Coding-Platform",
+    demo: "https://codegear-alpha.vercel.app",
+    size: "medium",
+    media: "https://raw.githubusercontent.com/genos069/Real-Time-Interview-Collaborative-Coding-Platform/main/Client/public/demo.png",
+    accentLabel: "Interview Platform",
+  },
+
 ];
 
 export type Stat = {
@@ -170,9 +170,9 @@ export type Stat = {
 };
 
 export const stats: Stat[] = [
-  { label: "Full-stack apps shipped", value: "6", suffix: "+" },
-  { label: "Auth systems built from scratch", value: "4", suffix: "+" },
-  { label: "REST endpoints designed", value: "60", suffix: "+" },
+  { label: "Full-stack apps shipped", value: "10", suffix: "+" },
+  { label: "Auth systems built from scratch", value: "17", suffix: "+" },
+  { label: "REST endpoints designed", value: "120", suffix: "+" },
   { label: "Payment gateways integrated", value: "2" },
 ];
 

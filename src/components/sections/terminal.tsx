@@ -6,12 +6,12 @@ import { siteConfig, skillGroups } from "@/lib/data";
 type Line = { type: "command" | "output"; text: string };
 
 const commands: Record<string, string[]> = {
-  whoami: [
+  aboutMe : [
     `${siteConfig.name}`,
     "Full-stack engineer · React / Node / Express / MongoDB",
     `Based in ${siteConfig.location}`,
   ],
-  "cat stack.json": [
+  myStack : [
     `  "frontend": [${skillGroups[0].skills.slice(0, 4).map((s) => `"${s}"`).join(", ")}],`,
     `  "backend": [${skillGroups[1].skills.map((s) => `"${s}"`).join(", ")}],`,
     `  "database": ["MongoDB"],`,
@@ -19,16 +19,16 @@ const commands: Record<string, string[]> = {
     `  "tools": [${skillGroups[4].skills.map((s) => `"${s}"`).join(", ")}],`,
     `  "languages": [${skillGroups[5].skills.map((s) => `"${s}"`).join(", ")}]`,
   ],
-  "git log --oneline -3": [
-    "feat: integrate Razorpay checkout flow",
-    "feat: role-based authorization for driver/admin",
-    "fix: geolocation validation edge cases",
-  ],
-  "npm run status": [
+  // "git log --oneline -3": [
+  //   "feat: integrate Razorpay checkout flow",
+  //   "feat: role-based authorization for driver/admin",
+  //   "fix: geolocation validation edge cases",
+  // ],
+  currentStatus : [
     "> status",
     "",
     "open to work     ✓",
-    "response time     < 24h",
+    "response time     < 12h",
   ],
   "clear": [],
 };
